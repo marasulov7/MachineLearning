@@ -43,3 +43,14 @@ result['prediction'] = predictions.tolist()
 
 print(result.to_string())
 
+# Определение оси х
+x_axis = X_test.carat
+
+# Построение графиков
+plt.scatter(x_axis, y_test, c = 'b', alpha = 1, marker = '*', label = 'Real') # alpha - прозрачность точек, с - цвет, marker - тип точки
+plt.scatter(x_axis, predictions, c = 'r', alpha = 1, marker = '+', label = 'Predicted') 
+plt.xlabel('Carat')
+plt.ylabel('Price')
+plt.grid(color = '#D3D3D3', linestyle = 'solid')
+plt.legend(loc = 'lower center') # расположение описания графика
+plt.show()
